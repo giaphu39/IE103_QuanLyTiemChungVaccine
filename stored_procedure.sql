@@ -16,7 +16,7 @@ BEGIN
 END;
 $$;
 
---CALL ThemKhachHang('2006-05-10', true, 'Nguyen Van A', 'HCM', '0912345678');
+--CALL LuuThongTinKhachHang('2006-05-10', true, 'Nguyen Van A', 'HCM', '0912345678');
 
 -- Tạo tài khoản nhân viên hành chính
 CREATE OR REPLACE PROCEDURE ThemNVHanhChinh(
@@ -37,7 +37,6 @@ END;
 $$;
 
 --CALL ThemNVHanhChinh('1995-06-23', false, 'LE_TAN', 'Huynh Van B', 'HCM', '0123456789');
-
 
 -- Tạo hóa đơn
 CREATE OR REPLACE PROCEDURE TaoHoaDon(
@@ -249,7 +248,7 @@ CREATE OR REPLACE PROCEDURE TaoPhieuKhamSangLoc(
     IN p_NhietDo NUMERIC(4,1),
     IN p_ChieuCao NUMERIC(5,2),
     IN p_CanNang NUMERIC(5,2),
-    IN p_KLCuaBS TEXT,
+    IN p_KLCuaBS KetLuanBSEnum,
     IN p_TSDiUng TEXT,
     IN p_MaNV INT
 )
@@ -884,5 +883,7 @@ BEGIN
 
 END;
 $$;
+
+
 
 
